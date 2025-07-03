@@ -38,19 +38,19 @@ const Week = () => {
 
     return (
         <div className="grid grid-cols-7 border-b border-gray-300 dark:border-gray-700 py-2">
-            {DAYS.map(item => (
-                <div key={item} className="tracking-wide text-gray-500 text-center">
-                    {ucFirst(
-                        shortString(
-                            dateFormat(
-                                new Date(2022, 10, 6 + item + startDateModifier),
-                                "ddd",
-                                i18n
-                            ) || ""
-                        )
-                    )}
-                </div>
-            ))}
+            {DAYS.map(item => {
+                // Calculate the day index considering the start of the week
+                const dayIndex = (item + startDateModifier) % 7;
+                return (
+                    <div key={item} className="tracking-wide text-gray-500 text-center">
+                        {ucFirst(
+                            shortString(
+                                dateFormat(new Date(2022, 10, 6 + dayIndex), "ddd", i18n) || ""
+                            )
+                        )}
+                    </div>
+                );
+            })}
         </div>
     );
 };
