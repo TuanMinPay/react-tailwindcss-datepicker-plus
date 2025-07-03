@@ -182,4 +182,4 @@ I thank you in advance for your contribution to this project.
 
 ## License
 
-[MIT](LICENSE) Licensed. Copyright (c) Lewhe tuanminpay 2022.
+[MIT](LICENSE) Licensed. Copyright (c) TuanMinPay 2025.
